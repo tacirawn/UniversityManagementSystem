@@ -10,7 +10,7 @@ export default class Student {
     }
 
     addCourse(courseId, grade) {
-        
+        this.courses.push({courseId: courseId, grade: grade});
     }
 
     getAverage() {
