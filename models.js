@@ -20,6 +20,9 @@ export default class Student {
             total += course.grade;
             courseNumber++;
         }
+        if(courseNumber === 0){
+            return 0;
+        }
         return total / courseNumber;
     }
 }
