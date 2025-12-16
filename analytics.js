@@ -7,7 +7,7 @@ export const calculateClassAverage = (students, courseId) => {
         let course = st.courses.find(a => a.courseId === courseId);
 
         if (course) {
-            gradeTotal = gradeTotal + course.grade;
+            gradeTotal += course.grade;
             numberOfStudents++;
         }
     }
@@ -16,9 +16,18 @@ export const calculateClassAverage = (students, courseId) => {
 };
 
 export const findTopStudent = (students) => {
+    let topStudentName = "";
+    let topGrade = students.reduce((acc, st) => {
+        if (st.getAverage > acc) {
+            acc = st.getAverage;
+            topStudentName = st.name;
+        }
+        return acc;
+    }, 0);
 
+    console.log("Top Student: ", topStudentName, " (Average: ", topGrade, ")");
 }
 
 export const filterStudents = (students, criteriaFn) => {
-
+    
 }
