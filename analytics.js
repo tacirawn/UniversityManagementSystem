@@ -1,12 +1,18 @@
-export const calculateClassAverage = (students, courseId) => {
-    allStudentGrades = [students, courseId];
+console.log("--- Analytics Report ---");
 
-    for (st of allStudentGrades) {
-        let grades = [];
-        if (st.courseId = courseId) {
-            st.students.courses
+export const calculateClassAverage = (students, courseId) => {
+    let gradeTotal = 0;
+    let numberOfStudents = 0;
+    for (let st of students) {
+        let course = st.courses.find(a => a.courseId === courseId);
+
+        if (course) {
+            gradeTotal = gradeTotal + course.grade;
+            numberOfStudents++;
         }
     }
+    let average = gradeTotal / numberOfStudents;
+    console.log("Class Average for Course ", courseId, ":", average);
 };
 
 export const findTopStudent = (students) => {
