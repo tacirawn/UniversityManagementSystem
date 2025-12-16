@@ -14,16 +14,16 @@ export const calculateClassAverage = (students, courseId) => {
 };
 
 export const findTopStudent = (students) => {
-    let topStudentName = "";
+    let topStudent;
     let topGrade = students.reduce((acc, st) => {
         if (st.getAverage > acc) {
             acc = st.getAverage;
-            topStudentName = st.name;
+            topStudent = st;
         }
         return acc;
     }, 0);
 
-    return topStudentName;
+    return topStudent;
 }
 
 export const filterStudents = (students, criteriaFn) => {
