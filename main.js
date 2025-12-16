@@ -22,8 +22,12 @@ fetchStudents((rawData) => {
 
     console.log("--- Analytics Report ---");
     console.log("Class Average for Course 101: ", calculateClassAverage(students, 101));
-    console.log("Top Student: ", findTopStudent(students).name, "(Average: ", findTopStudent(students).getAverage(), ")");
-    console.log("Students in Course 102: ", filterStudents(students, (student) => student.courses.some(course => course.courseId === 102)));
+    const topStudent = findTopStudent(students);
+    console.log("Top Student: ", topStudent.name, "(Average: ", topStudent.getAverage(), ")");
+
+    const courseStudents = filterStudents(students, (student) => student.courses.some(course => course.courseId === 102));
+    const courseStudentsNames = courseStudents.map(s => s.name).join(", ");
+    console.log("Students in Course 102: ", courseStudentsNames);
 });
 
 

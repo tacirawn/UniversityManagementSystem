@@ -16,7 +16,7 @@ export default class Student {
     getAverage() {
         let total = 0;
         let courseNumber = 0;
-        for (course of courses) {
+        for (let course of this.courses) {
             total += course.grade;
             courseNumber++;
         }

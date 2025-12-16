@@ -16,7 +16,7 @@ export const calculateClassAverage = (students, courseId) => {
 export const findTopStudent = (students) => {
     let topStudent;
     let topGrade = students.reduce((acc, st) => {
-        if (st.getAverage > acc) {
+        if (st.getAverage() > acc) {
             acc = st.getAverage;
             topStudent = st;
         }
@@ -30,7 +30,7 @@ export const filterStudents = (students, criteriaFn) => {
     let filteredList = [];
     for (let st of students) {
         if (criteriaFn(st)) {
-            filteredList.push();
+            filteredList.push(st);
         }
     }
     return filteredList;
