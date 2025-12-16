@@ -6,7 +6,15 @@ import filterStudents from './analytics.js';
 
 
 console.log("Fetching data from database...");
-console.log("Data received!");
+fetchStudents((rawData) => { 
+    console.log("Data received!");
+    const students = rawData.map(s => new Student(s.id, s.name, s.courses));
 
-fetchStudents()
+    console.log("Testing Immutability:");
+    console.log("")
+
+});
+
+
+
 
