@@ -1,5 +1,3 @@
-console.log("--- Analytics Report ---");
-
 export const calculateClassAverage = (students, courseId) => {
     let gradeTotal = 0;
     let numberOfStudents = 0;
@@ -12,7 +10,7 @@ export const calculateClassAverage = (students, courseId) => {
         }
     }
     let average = gradeTotal / numberOfStudents;
-    console.log("Class Average for Course ", courseId, ":", average);
+    return average;
 };
 
 export const findTopStudent = (students) => {
@@ -25,9 +23,15 @@ export const findTopStudent = (students) => {
         return acc;
     }, 0);
 
-    console.log("Top Student: ", topStudentName, " (Average: ", topGrade, ")");
+    return topStudentName;
 }
 
 export const filterStudents = (students, criteriaFn) => {
-    
+    let filteredList = [];
+    for (let st of students) {
+        if (criteriaFn(st)) {
+            filteredList.push();
+        }
+    }
+    return filteredList;
 }
